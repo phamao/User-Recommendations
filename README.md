@@ -4,7 +4,7 @@ A simple application that retrieves a user's top 10 Spotify tracks, generates 10
 
 ## Project Status
 
-This project is currently in development. Users can generate a new playlist of their 10 top tracks and 10 recommendations. Integration into a web application is currently in progress.
+This project is currently in development. Using a locally hosted web application, users can generate a new playlist of their 10 top tracks and 10 recommendations with the press of a button. They will then be redirected to the playlist on the Spotify browser app. Integration with Google CLoud's web hosting service is currently in progress.
 
 ## Reflection
 
@@ -12,4 +12,4 @@ This was initially a personal project I began in order to learn about how APIs w
 
 Building the script has taken about a week of work, which included researching how APIs worked and exploring the functionalities of Spotify's API. The biggest challenge I ran into was with Authorization, as I spent days trying to manually work with Spotify's OAuth 2.0 framework. This eventually led me to integrate the Spotipy library, but I ended up learning a fair amount about the steps of the authorization process.
 
-I am now looking into using the Flask framework to create a web application to deploy my script.
+I have also explored the Flask framework over a couple of days in order to create a simple web application that allows users to generate their own playlists with the press of a button. Currently, the website functions locally, but I am now attempting to use Google Cloud in order to deploy it for public use.

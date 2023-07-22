@@ -2,6 +2,7 @@ from dotenv import load_dotenv
 import os
 import spotipy
 from spotipy.oauth2 import SpotifyOAuth
+import webbrowser
 
 load_dotenv()
 
@@ -92,8 +93,10 @@ def make_recommended_playlist(authentication, track_id_list):
         songs_added += 1
         print(f"Successfully added {recommendation_name}... ({songs_added}/20)")
 
-    return "Playlist successfully generated!"
+    print("Playlist successfully generated!")
+    return playlist_id
 
 
-tracks = get_user_top_tracks(sp)
-make_recommended_playlist(sp, tracks)
+# tracks = get_user_top_tracks(sp)
+# playlist_id = make_recommended_playlist(sp, tracks)
+# url = f"https://open.spotify.com/playlist/{playlist_id}"
