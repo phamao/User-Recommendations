@@ -11,8 +11,10 @@ client_secret = os.getenv("CLIENT_SECRET")
 redirect_uri = os.getenv("REDIRECT_URI")
 
 ##Obtains authorization (Authorization Code Flow) from the Spotify API for the below scopes 
-scope = "user-top-read, playlist-modify-public, playlist-modify-private"
-sp = spotipy.Spotify(auth_manager = SpotifyOAuth(scope = scope, client_id = client_id, client_secret = client_secret, redirect_uri = redirect_uri))
+scope = "user-top-read, playlist-modify-public, playlist-modify-private, user-read-private, user-read-email"
+
+def get_user_authentication():
+    return spotipy.Spotify(auth_manager = SpotifyOAuth(scope = scope, client_id = client_id, client_secret = client_secret, redirect_uri = redirect_uri))
 
 
 ##Retrieves the user's top 10 tracks over the long term, then returns a list of these tracks' Spotify IDs
@@ -96,7 +98,7 @@ def make_recommended_playlist(authentication, track_id_list):
     print("Playlist successfully generated!")
     return playlist_id
 
-
+# sp = spotipy.Spotify(auth_manager = SpotifyOAuth(scope = scope, client_id = client_id, client_secret = client_secret, redirect_uri = redirect_uri))
 # tracks = get_user_top_tracks(sp)
 # playlist_id = make_recommended_playlist(sp, tracks)
 # url = f"https://open.spotify.com/playlist/{playlist_id}"
